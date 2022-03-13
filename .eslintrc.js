@@ -30,6 +30,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
     'react/prop-types': 'off',
+    'quote-props': 'off',
     'prettier/prettier': ['off', {}, { usePrettierrc: true }] // Includes .prettierrc.js rules
   }
 }
