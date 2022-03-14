@@ -31,6 +31,7 @@ module.exports = {
     'react/display-name': 'off',
     'react/prop-types': 'off',
     'quote-props': 'off',
+    'multiline-ternary': ['error', 'never'],
     'prettier/prettier': ['off', {}, { usePrettierrc: true }] // Includes .prettierrc.js rules
   }
 }
