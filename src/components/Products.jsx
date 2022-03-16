@@ -9,7 +9,6 @@ const Products = () => {
   const handleAddToCart = (product) => () => {
     const random = Math.floor(Math.random() * 1000)
     const newProduct = { ...product, cartId: `${product.id}-${random}` }
-    console.log(newProduct)
     addToCart(newProduct)
   }
   return (

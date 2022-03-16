@@ -2,17 +2,15 @@ import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { PayPalButton } from 'react-paypal-button-v2'
 import AppContext from '../context/AppContext'
-import api from '../hooks/api'
 import '../styles/components/Payment.css'
 
 const Payment = () => {
   const { state, addNewOrder } = useContext(AppContext)
   const { cart, buyer } = state
   const history = useHistory()
-  const clientID = api.paypalPaymentClientID
 
   const paypalOptions = {
-    cliendId: clientID,
+    cliendId: process.env.PAYPAL_PAYMENT_CLIENT_ID,
     intent: 'capture',
     currenct: 'USD'
   }
@@ -23,7 +21,6 @@ const Payment = () => {
   }
 
   const handlePaymentSuccess = (data) => {
-    console.log(data)
     if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
