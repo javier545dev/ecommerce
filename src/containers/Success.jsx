@@ -8,6 +8,7 @@ const Success = () => {
   const { state } = useContext(AppContext)
   const { buyer } = state
   const location = useGoogleAdress(buyer[0].adress)
+  console.log(location)
   return (
     <div className="Success">
       <div className="Success-content">

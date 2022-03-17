@@ -1,5 +1,9 @@
 export default {
-  buyer: [],
+  buyer: [
+    {
+      address: 'cll 9-A 1-A 04, Manizales'
+    }
+  ],
   cart: [],
   orders: [],
   products: [
