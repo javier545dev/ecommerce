@@ -9,7 +9,7 @@ const Information = () => {
   const { cart } = state
   const history = useHistory()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     const formData = new FormData(form.current)
     const buyer = {
       name: formData.get('name'),
@@ -35,7 +35,7 @@ const Information = () => {
           <form ref={form}>
             <input type="text" placeholder="Nombre Completo" name="name" />
             <input type="text" placeholder="Correo Electronico" name="email" />
-            <input type="text" placeholder="Direccion" name="adress" />
+            <input type="text" placeholder="Direccion" name="address" />
             <input type="text" placeholder="Apto" name="apto" />
             <input type="text" placeholder="Ciudad" name="city" />
             <input type="text" placeholder="Pais" name="country" />
