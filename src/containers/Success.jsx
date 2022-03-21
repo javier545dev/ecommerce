@@ -7,7 +7,8 @@ import '../styles/components/Success.css'
 const Success = () => {
   const { state } = useContext(AppContext)
   const { buyer } = state
-  const location = useGoogleAddress(buyer[buyer.length - 1].address)
+  const location = useGoogleAddress(buyer[buyer.length - 1])
+  console.log(location)
   return (
     <div className="Success">
       <div className="Success-content">
