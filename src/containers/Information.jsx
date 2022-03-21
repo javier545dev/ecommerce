@@ -12,7 +12,12 @@ const Information = () => {
   const handleSubmit = () => {
     const formData = new FormData(form.current)
     const buyer = {
-      name: formData.get('name'),
+      name:
+        formData.get('name').charAt(0).toUpperCase() +
+        formData.get('name').slice(1),
+      lastname:
+        formData.get('lastname').charAt(0).toUpperCase() +
+        formData.get('lastname').slice(1),
       email: formData.get('email'),
       address: formData.get('address'),
       apto: formData.get('apto'),
@@ -33,7 +38,8 @@ const Information = () => {
         </div>
         <div className="Information-form">
           <form ref={form}>
-            <input type="text" placeholder="Nombre Completo" name="name" />
+            <input type="text" placeholder="Nombre" name="name" />
+            <input type="text" placeholder="Apellido" name="lastname" />
             <input type="text" placeholder="Correo Electronico" name="email" />
             <input type="text" placeholder="Direccion" name="address" />
             <input type="text" placeholder="Apto" name="apto" />

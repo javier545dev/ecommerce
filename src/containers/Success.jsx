@@ -8,11 +8,11 @@ const Success = () => {
   const { state } = useContext(AppContext)
   const { buyer } = state
   const location = useGoogleAddress(buyer[buyer.length - 1])
-  console.log(location)
   return (
     <div className="Success">
       <div className="Success-content">
-        <h2>{`${buyer[0].name} Gracias por tu compra`}</h2>
+        <h2>{`${buyer[0].name} ${buyer[0].lastname}...`}</h2>
+        <h3>Gracias por su compra </h3>
         <span>Tu pedido llegara en 3 dias a tu direccion:</span>
         <div className="Success-map">
           {location === undefined ? (
