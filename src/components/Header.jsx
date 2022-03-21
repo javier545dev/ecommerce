@@ -14,7 +14,7 @@ const Header = () => {
       </h1>
       <div className="Header-checkout">
         <Link to="/checkout">
-          <i className="fas fa-shopping-basket" />
+          <i className="fas fa-bag-shopping" />
         </Link>
         {cart.length > 0 && <div className="Header-alert">{cart.length}</div>}
       </div>

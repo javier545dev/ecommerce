@@ -5,7 +5,7 @@ import AppContext from '../context/AppContext'
 import '../styles/components/Payment.css'
 
 const Payment = () => {
-  const { state, addNewOrder } = useContext(AppContext)
+  const { state, addNewOrder, removeAllFromCart } = useContext(AppContext)
   const { cart, buyer } = state
   const history = useHistory()
 
@@ -29,6 +29,7 @@ const Payment = () => {
       }
       addNewOrder(newOrder)
       history.push('/checkout/success')
+      removeAllFromCart(cart)
     }
   }
 
