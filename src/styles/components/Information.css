@@ -67,6 +67,7 @@ input {
   padding: 4px 12px;
   width: 100%;
   box-sizing: border-box;
+  text-transform: capitalize
 }
 .Information-buttons {
   margin: 10px 0 0;
