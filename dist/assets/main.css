@@ -250,6 +250,7 @@ input {
   display: flex;
   justify-content: space-between;
   background-color: black;
+  height: 5rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   align-items: center;
@@ -276,7 +277,6 @@ input {
 
 .Footer {
   display: flex;
-  height: 5rem;
   align-items: center;
   justify-content: space-between;
   padding-left: 2.5rem;
@@ -294,6 +294,7 @@ body {
 
 .Main {
   display: grid;
+  height: 100vh;
 }
 
 

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import AppContext from '../context/AppContext'
+import AnimationLottie from './Lottie'
 import '../styles/components/Checkout.css'
 
 const Checkout = () => {
@@ -17,10 +18,21 @@ const Checkout = () => {
     const sum = cart.reduce(reducer, 0)
     return sum
   }
+
   return (
     <div className="Checkout">
       <div className="Checkout-content">
-        <h3>{cart.length > 0 ? 'Lista de Pedidos:' : 'Sin Pedidos...'}</h3>
+        <div>
+          {cart.length > 0 ? (
+            <h3> Lista de Pedidos: </h3>
+          ) : (
+            <div className={{ TextAlign: 'center' }}>
+              <h3>Ups No hay Compras</h3>
+              <h3>Apurate wey deja lo pichirre</h3>
+              <AnimationLottie />
+            </div>
+          )}
+        </div>
 
         {cart.map((item) => (
           <div className="Checkout-item" key={item.cartId}>

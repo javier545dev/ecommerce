@@ -4,6 +4,7 @@
   grid-row-gap: 1.5em;
   display: grid;
   padding: 0 0 4em 0;
+  margin: 4rem;
 }
 .Checkout-item {
   display: flex;
@@ -31,7 +32,6 @@
 .Checkout-element h4 {
   margin: 0;
 }
-
 .Checkout-sidebar button {
   box-shadow: inset 0px 1px 0px 0px #bee2f9;
   background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
@@ -51,7 +51,6 @@
   display: block;
   outline: none;
 }
-
 a {
   text-decoration: none;
 }

@@ -1,8 +1,9 @@
 .Payment {
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
   grid-row-gap: 1.5em;
   display: grid;
+  padding: 1rem;
 }
 .Payment-back {
   margin: 10px 0 0 0;

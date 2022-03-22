@@ -30,26 +30,128 @@ const Information = () => {
     history.push('/checkout/payment')
   }
 
+  const onFocus = (event) => {
+    event.target.parentElement.classList.add('is-active')
+    event.target.parentElement.classList.add('is-completed')
+  }
+
+  const onFocusOut = (event) => {
+    const data = event.target.value
+    if (data === '') {
+      event.target.parentElement.classList.remove('is-active')
+      event.target.parentElement.classList.remove('is-completed')
+    }
+  }
+
   return (
     <div className="Information">
       <div className="Information-content">
         <div className="Information-head">
           <h2>Informacion de contacto</h2>
         </div>
-        <div className="Information-form">
-          <form ref={form}>
-            <input type="text" placeholder="Nombre" name="name" />
-            <input type="text" placeholder="Apellido" name="lastname" />
-            <input type="text" placeholder="Correo Electronico" name="email" />
-            <input type="text" placeholder="Direccion" name="address" />
-            <input type="text" placeholder="Apto" name="apto" />
-            <input type="text" placeholder="Ciudad" name="city" />
-            <input type="text" placeholder="Pais" name="country" />
-            <input type="text" placeholder="Estado" name="state" />
-            <input type="text" placeholder="Codigo Postal" name="cp" />
-            <input type="text" placeholder="Telefono" name="phone" />
-          </form>
-        </div>
+
+        <form ref={form} className="Information-form">
+          <div id="input" className="div-container">
+            <label className="label-container"> Nombre </label>
+            <input
+              type="text"
+              name="name"
+              onFocus={onFocus}
+              onBlur={onFocusOut}
+            />
+          </div>
+
+          <div className="div-container">
+            <label className="label-container"> Apellido </label>
+            <input
+              type="text"
+              name="lastname"
+              onFocus={onFocus}
+              onBlur={onFocusOut}
+            />
+          </div>
+
+          <div className="div-container">
+            <label className="label-container"> Correo Electronico </label>
+            <input
+              type="text"
+              name="email"
+              onFocus={onFocus}
+              onBlur={onFocusOut}
+            />
+          </div>
+
+          <div className="div-container">
+            <label className="label-container"> Direccion </label>
+            <input
+              type="text"
+              name="address"
+              onFocus={onFocus}
+              onBlur={onFocusOut}
+            />
+          </div>
+
+          <div className="div-container">
+            <label className="label-container"> Apartamento </label>
+            <input
+              type="text"
+              name="apto"
+              onFocus={onFocus}
+              onBlur={onFocusOut}
+            />
+          </div>
+
+          <div className="div-container">
+            <label className="label-container"> Ciudad </label>
+            <input
+              type="text"
+              name="city"
+              onFocus={onFocus}
+              onBlur={onFocusOut}
+            />
+          </div>
+
+          <div className="div-container">
+            <label className="label-container"> Pais </label>
+            <input
+              type="text"
+              name="country"
+              onFocus={onFocus}
+              onBlur={onFocusOut}
+            />
+          </div>
+
+          <div className="div-container">
+            <label className="label-container"> Estado </label>
+            <input
+              type="text"
+              name="state"
+              onFocus={onFocus}
+              onBlur={onFocusOut}
+            />
+          </div>
+
+          <div className="div-container">
+            <label className="label-container"> Codigo Postal </label>
+            <input
+              type="text"
+              name="cp"
+              onFocus={onFocus}
+              onBlur={onFocusOut}
+            />
+          </div>
+
+          <div className="div-container">
+            <label className="label-container"> Telefono </label>
+            <input
+              type="text"
+              name="phone"
+              onFocus={onFocus}
+              onBlur={onFocusOut}
+            />
+          </div>
+        </form>
+
         <div className="Information-buttons">
           <div className="Information-back">
             <Link to="/checkout">Regresar</Link>
