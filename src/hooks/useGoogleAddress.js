@@ -8,7 +8,6 @@ const useGoogleAddress = ({ address, city, province, country, cp }) => {
   useEffect(async () => {
     const response = await axios(API)
     setMap(response.data.results[0].geometry.location)
-    setTimeout(() => {}, 2000)
   }, [])
 
   return map

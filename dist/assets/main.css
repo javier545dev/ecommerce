@@ -4,6 +4,7 @@
   grid-gap: 1.5rem;
   grid-row-gap: 1.5em;
   display: grid;
+  padding: 2rem;
 }
 .Products-item {
   text-decoration: none;
@@ -12,6 +13,7 @@
   border-radius: 5px;
   margin: 0 0 20px 0;
   position: relative;
+  text-align: center;
 }
 .Products-item-info {
   padding: 10px;
@@ -247,6 +249,10 @@ input {
 .Header {
   display: flex;
   justify-content: space-between;
+  background-color: black;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  align-items: center;
 }
 .Header-checkout {
   display: flex;
@@ -257,18 +263,26 @@ input {
   margin: 0 0 0 0.5em;
 }
 .Header-alert {
-  color: #33b13a;
+  font-weight: bold;
+  color: #33b1ff;
   font-size: 14px;
   margin-left: 5px;
 }
 .Header a {
   text-decoration: none;
   color: #33b1ff;
+  font-size: 20px;
 }
 
 .Footer {
   display: flex;
+  height: 5rem;
+  align-items: center;
   justify-content: space-between;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-color: black;
+  color: #33b1ff;
 }
 
 body {
@@ -279,10 +293,7 @@ body {
 }
 
 .Main {
-  padding: 10px;
-  grid-template-columns: minmax(auto, 768px);
   display: grid;
-  justify-content: center;
 }
 
 

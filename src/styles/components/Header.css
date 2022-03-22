@@ -1,6 +1,11 @@
 .Header {
   display: flex;
   justify-content: space-between;
+  background-color: black;
+  height: 5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  align-items: center;
 }
 .Header-checkout {
   display: flex;
@@ -11,6 +16,7 @@
   margin: 0 0 0 0.5em;
 }
 .Header-alert {
+  font-weight: bold;
   color: #33b1ff;
   font-size: 14px;
   margin-left: 5px;

@@ -3,6 +3,7 @@
   grid-gap: 1.5rem;
   grid-row-gap: 1.5em;
   display: grid;
+  padding: 2rem;
 }
 .Products-item {
   text-decoration: none;
@@ -11,6 +12,7 @@
   border-radius: 5px;
   margin: 0 0 20px 0;
   position: relative;
+  text-align: center;
 }
 .Products-item-info {
   padding: 10px;
