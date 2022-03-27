@@ -1,7 +1,7 @@
 const path = require('path')
-const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const DotenvWebpackPlugin = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/index.js',
@@ -10,7 +10,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/'
   },
-  devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx']
   },
@@ -32,7 +31,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
+        test: /\.(s*)css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader
@@ -50,12 +49,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assets/[name].css'
     }),
-    new Dotenv()
+    new DotenvWebpackPlugin()
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    compress: true,
     historyApiFallback: true,
+    compress: true,
     port: 3005
   }
 }
