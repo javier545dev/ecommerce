@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import AppContext from '../context/AppContext'
-import AnimationLottie from './Lottie'
 import '../styles/components/Checkout.css'
 
 const Checkout = () => {
@@ -29,7 +28,6 @@ const Checkout = () => {
             <div className={{ TextAlign: 'center' }}>
               <h3>Ups No hay Compras</h3>
               <h3>Apurate wey deja lo pichirre</h3>
-              <AnimationLottie />
             </div>
           )}
         </div>
