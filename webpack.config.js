@@ -55,19 +55,13 @@ module.exports = {
     }),
 
     new Dotenv({
-      path: './.env',
-      safe: true,
-      systemvars: true,
-      defaults: false
+      path: path.resolve(__dirname, './.env')
     }),
-
     new webpack.DefinePlugin({
-      'process.env': {
-        REACT_APP_CLIENT_ID: JSON.stringify(
-          process.env.PAYPAL_PAYMENT_CLIENT_ID
-        ),
-        API_KEY: JSON.stringify(process.env.GOOGLE_MAPS_API)
-      }
+      'process.env.PAYPAL_PAYMENT_CLIENT_ID': JSON.stringify(
+        process.env.PAYPAL_PAYMENT_CLIENT_ID
+      ),
+      'process.env.GOOGLE_MAPS_API': JSON.stringify(process.env.GOOGLE_MAPS_API)
     })
   ],
   devServer: {
