@@ -1,16 +1,18 @@
 const path = require('path')
-const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
+  mode: 'production',
+  devtool: 'inline-source-map',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/'
   },
-  devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx']
   },
@@ -47,10 +49,24 @@ module.exports = {
       template: './public/index.html',
       filename: './index.html'
     }),
+
     new MiniCssExtractPlugin({
       filename: 'assets/[name].css'
     }),
-    new Dotenv()
+
+    new Dotenv({
+      path: './.env',
+      safe: true,
+      systemvars: true,
+      defaults: false
+    }),
+
+    new webpack.DefinePlugin({
+      'process.env': {
+        REACT_APP_CLIENT_ID: JSON.stringify(process.env.REACT_APP_CLIENT_ID),
+        API_KEY: JSON.stringify(process.env.API_KEY)
+      }
+    })
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
