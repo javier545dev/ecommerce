@@ -13,8 +13,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          GOOGLE_MAPS_API: ${{secrets.GOOGLE_MAPS_API}}
-          PAYPAL_PAYMENT_CLIENT_ID: ${{secrets.PAYPAL_PAYMENT_CLIENT_ID}}
+          GOOGLE_MAPS_API: ${{ secrets.GOOGLE_MAPS_API }}
+          PAYPAL_PAYMENT_CLIENT_ID: ${{ secrets.PAYPAL_PAYMENT_CLIENT_ID }}
       - name: Archive Production Artifact
         uses: actions/upload-artifact@main
         with:
