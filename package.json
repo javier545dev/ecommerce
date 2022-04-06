@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode development",
+    "production": "webpack serve --mode production",
     "build": "webpack --mode production",
     "deploy": "webpack --mode production && firebase deploy",
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",

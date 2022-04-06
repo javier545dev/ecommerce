@@ -31,7 +31,6 @@ const Checkout = () => {
             </div>
           )}
         </div>
-
         {cart.map((item) => (
           <div className="Checkout-item" key={item.cartId}>
             <div className="Checkout-element">
