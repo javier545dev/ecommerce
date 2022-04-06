@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { PayPalButton } from 'react-paypal-button-v2'
 import AppContext from '../context/AppContext'
 import '../styles/components/Payment.css'
@@ -7,9 +7,9 @@ import '../styles/components/Payment.css'
 const Payment = () => {
   const { state, addNewOrder, removeAllFromCart } = useContext(AppContext)
   const { cart, buyer } = state
-  const history = useHistory()
+  const history = useNavigate()
 
-  const paypalOptions = {
+  const PaypalOptions = {
     cliendId: process.env.PAYPAL_PAYMENT_CLIENT_ID,
     intent: 'capture',
     currenct: 'USD'
@@ -28,7 +28,7 @@ const Payment = () => {
         payment: data
       }
       addNewOrder(newOrder)
-      history.push('/checkout/success')
+      history('/checkout/success')
       removeAllFromCart(cart)
     }
   }
@@ -55,11 +55,11 @@ const Payment = () => {
       </div>
       <div className="Payment-button">
         <PayPalButton
-          paypalOptions={paypalOptions}
+          paypalOptions={PaypalOptions}
           buttonStyles={buttonStyles}
           amount={handleSumTotal()}
           onSuccess={(data) => handlePaymentSuccess(data)}
-          onError={(error) => console.log(error)}
+          onError={(error) => console.log('no paso', error)}
           onCancel={(data) => console.log(data)}
         />
       </div>

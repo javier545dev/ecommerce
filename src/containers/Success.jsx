@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import AppContext from '../context/AppContext'
 import Map from '../components/Map'
 import useGoogleAddress from '../hooks/useGoogleAddress'
